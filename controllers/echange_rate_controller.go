@@ -35,7 +35,7 @@ func CreateExchangeRate(ctx *gin.Context) {
 func GetExchangeRate(ctx *gin.Context) {
 	var exchangeRates []models.ExchangeRate
 
-	if err := global.DDb.Find(&exchangeRates).Error; err != nil {
+	if err := global.Db.Find(&exchangeRates).Error; err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error})
 		return
 	}
