@@ -28,3 +28,14 @@ func CreateArticle(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusCreated, article)
 }
+
+func GetArticles(ctx *gin.Context) {
+	var articles []models.Article
+
+	if err := global.Db.Find(&articles).Error; err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, articles)
+}
