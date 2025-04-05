@@ -1,0 +1,10 @@
+app:
+  name: CurrencyExchangeApp
+  port: 3000
+
+database:
+  host: localhost
+  port: 3306
+  username: your_username
+  password: your_password
+  dbname: currency_exchange_app
