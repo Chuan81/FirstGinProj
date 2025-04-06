@@ -13,7 +13,7 @@ func SteupRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://localhost:5000"},
+		AllowOrigins:     []string{"http://localhost:5000"},
 		AllowMethods:     []string{"PUT", "PATCH", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
