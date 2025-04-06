@@ -8,7 +8,7 @@ import (
 	"github.com/go-redis/redis"
 )
 
-func likeArticle(ctx *gin.Context) {
+func LikeArticle(ctx *gin.Context) {
 	articleID := ctx.Param("id")
 
 	likeKey := "article:" + articleID + ":likes"

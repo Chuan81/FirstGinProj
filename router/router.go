@@ -21,6 +21,12 @@ func SteupRouter() *gin.Engine {
 	api.Use(middlewares.AutoMigrate())
 	{
 		api.POST("/exchangeRates", controllers.CreateExchangeRate)
+		api.POST("/articles", controllers.CreateArticle)
+		api.GET("/articles", controllers.GetArticles)
+		api.GET("/articles:id", controllers.GetArticlesByID)
+
+		api.POST("/articles/:id/like", controllers.LikeArticle)
+		api.GET("/articles/:id/like", controllers.GetArticleLikes)
 	}
 	return r
 }
