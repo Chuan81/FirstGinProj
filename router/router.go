@@ -3,16 +3,17 @@ package router
 import (
 	"exchangeapp/controllers"
 	"exchangeapp/middlewares"
+	"time"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"time"
 )
 
 func SteupRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://....com"},
+		AllowOrigins:     []string{"https://localhost:5000"},
 		AllowMethods:     []string{"PUT", "PATCH", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
